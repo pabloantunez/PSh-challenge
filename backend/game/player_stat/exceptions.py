@@ -1,0 +1,2 @@
+class NoPlayersException(Exception):
+    pass

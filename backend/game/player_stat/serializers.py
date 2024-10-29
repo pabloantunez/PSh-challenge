@@ -13,3 +13,13 @@ class PlayerStatSerializer(serializers.ModelSerializer):
             'score',
             'creation_date'
         ]
+
+class PlayerStatSerializerRepository(serializers.ModelSerializer):
+    class Meta:
+        model = PlayerStat
+        fields = [
+            'player',
+            'score',
+            'creation_date'
+        ]
+        
