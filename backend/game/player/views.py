@@ -7,8 +7,7 @@ from .utils import generate_multiples_players
 
 class PlayerListAPIView(APIView):
 
-    def __init__(self, player_repository=None, **kwargs):
-        super().__init__(**kwargs)
+    def __init__(self, player_repository=None):
         self.player_repository = player_repository or PlayerRepository()
 
     def get(self, request):
