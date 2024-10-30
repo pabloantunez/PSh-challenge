@@ -16,7 +16,6 @@ class PlayerStatListAPIView(APIView):
     def get(self, request):
         try:
             players_with_stats = self.player_stat_repository.get_all_players_with_stats()
-            print('Estos son los jugadores: ', players_with_stats)
             serializer = PlayerStatSerializer(players_with_stats, many=True)
             return Response(serializer.data)
         except Exception as e:

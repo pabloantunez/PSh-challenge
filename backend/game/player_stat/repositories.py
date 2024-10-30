@@ -22,3 +22,7 @@ class PlayerStatRepository(IPlayerStatRepository):
             PlayerStat(**data) for data in stats_to_create
         ])
         
+    def update_players_score(self, id, new_score):
+        player_stat = PlayerStat.objects.get(player_id=id)
+        player_stat.score = new_score
+        player_stat.save()
