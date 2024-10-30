@@ -103,18 +103,16 @@ CELERY_BROKER_URL = 'redis://localhost:6379/0'
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 
-
-
 CELERY_BEAT_SCHEDULE = {
-    'Players creation every 5 minute': {
+    'Players creation every 5 minutes': {
         'task': 'player.tasks.create_players_task',
         'schedule': crontab(minute='*/5'),
     },
 
-    # 'Update Scores every minute': {
-    #     'task': 'player_stat.tasks.update_player_scores',
-    #     'schedule': crontab(minute='*/1'),
-    # },
+    'Update Scores every 5 minutes': {
+        'task': 'player_stat.tasks.generate_player_stats_task',
+        'schedule': crontab(minute='*/5'),
+    },
 }
 
 # Password validation
