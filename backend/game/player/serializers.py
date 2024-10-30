@@ -5,4 +5,17 @@ class PlayerSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Player
-        fields = ['nickname', 'profile_image']
+        fields = [
+            'id',
+            'nickname', 
+            'profile_image'
+        ]
+
+class PlayerSerializerRepository(serializers.ModelSerializer):
+
+    class Meta:
+        model = Player
+        fields = [
+            'nickname',
+            'profile_image'
+        ]

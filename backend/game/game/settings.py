@@ -106,10 +106,15 @@ CELERY_TASK_SERIALIZER = 'json'
 
 
 CELERY_BEAT_SCHEDULE = {
-    'Update Scores every minute': {
-        'task': 'player_stat.tasks.update_player_scores',
-        'schedule': crontab(minute='*/1'),
+    'Players creation every 5 minute': {
+        'task': 'player.tasks.create_players_task',
+        'schedule': crontab(minute='*/5'),
     },
+
+    # 'Update Scores every minute': {
+    #     'task': 'player_stat.tasks.update_player_scores',
+    #     'schedule': crontab(minute='*/1'),
+    # },
 }
 
 # Password validation
