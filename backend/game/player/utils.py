@@ -11,6 +11,7 @@ def generate_random_player():
         player_repository = PlayerRepository()
         player = player_repository.create_player(nickname, profile_image)
         return player
+    
     except requests.exceptions.RequestException as e:
         print(f'Something happened when doing the request: {e}')
     except Exception as e:
