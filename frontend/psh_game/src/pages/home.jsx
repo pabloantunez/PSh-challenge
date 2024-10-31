@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
+import BasicButtons from '../components/Button';
 
 const Home = () => {
   const location = useLocation();
@@ -10,7 +11,12 @@ const Home = () => {
       <h1>Welcome to the PSh Statistics Game</h1>
       {!hideButtons.includes(location.pathname) && (
         <Link to="/stats">
-          <button>Show Stats</button>
+          <BasicButtons 
+            label='Show Statistics'
+            color='secondary'
+            variant='contained'
+            size='large'
+          />
         </Link>
       )}
       <Outlet />
