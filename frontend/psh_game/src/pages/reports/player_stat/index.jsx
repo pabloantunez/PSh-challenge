@@ -33,7 +33,10 @@ const PlayerStats = () => {
 
     useEffect(() => {
         fetchPlayers();
-        }, []);
+        const interval = setInterval(fetchPlayers, 10000);
+
+        return () => clearInterval(interval);
+      }, []);
     
     const columns = [
         { field: 'profileImage', headerName: 'Avatar', width: 90, flex: 1, renderCell: (params) => <img src={params.value} /> },
