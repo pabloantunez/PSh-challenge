@@ -14,14 +14,14 @@ const PlayerStats = () => {
     const fetchPlayers = async () => {
         try{
             const response = await axios.get(getPlayerStats);
-            // verificar los 10 mas altos.
+
             const mappedRows = response.data.map(player_stat => ({
                 id: player_stat.id,
                 profileImage: player_stat.player.profile_image,
                 nickname:player_stat.player.nickname,
                 score: player_stat.score,
                 dateStat: formatDate(player_stat.creation_date)
-            }));
+            })).sort((a,b) => b.score - a.score);
 
             setRows(mappedRows);
             } catch (error) {
@@ -44,7 +44,7 @@ const PlayerStats = () => {
 
   return (
     <div className='container mx-auto h-full items-center flex flex-col'>
-      <h1 className='text-red-psh font-bold text-3xl mb-8 mt-2'>Player Statistics</h1>
+      <h1 className='text-red-psh font-bold text-3xl mb-8 mt-2'>Players Statistics Report</h1>
 
       <DataGridDemo 
         rows={rows}
