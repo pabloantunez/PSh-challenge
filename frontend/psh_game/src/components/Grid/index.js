@@ -7,7 +7,7 @@ export default function DataGridDemo({ rows, columns, maxElements }) {
   const pageSizeOptions = [maxElements || 10]; 
 
   return (
-    <Box className="custom-container">
+    <Box className="custom-container" sx={{ height: 650, width: '100%' }}>
       <DataGrid
         rows={rows}
         columns={columns}
@@ -21,7 +21,6 @@ export default function DataGridDemo({ rows, columns, maxElements }) {
         pageSizeOptions={pageSizeOptions}
         checkboxSelection={false}
         disableRowSelectionOnClick
-        style={{ width: '100%' }}
       />
     </Box>
   );

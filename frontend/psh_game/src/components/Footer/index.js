@@ -2,20 +2,11 @@ import React from 'react';
 
 const Footer = ({ linkedinUrl, title }) => {
   return (
-    <footer style={footerStyle}>
+    <footer className='p-5 text-center w-full bottom-0 bg-purple-psh bg-opacity-100 text-white'>
       <p>Profile: {linkedinUrl}</p>
       <p>{title}</p>
     </footer>
   );
-};
-
-const footerStyle = {
-  padding: '20px',
-  backgroundColor: '#f1f1f1',
-  textAlign: 'center',
-  position: 'fixed',
-  width: '100%',
-  bottom: '0',
 };
 
 export default Footer;

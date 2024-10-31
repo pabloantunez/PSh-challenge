@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 
 function Header({ name, challengeName }) {
   return (
-    <AppBar position="static">
+    <AppBar position="static" className='!bg-purple-psh'>
       <Toolbar sx={{ justifyContent: 'space-between' }}>
         <Typography variant="h6">
           {name}

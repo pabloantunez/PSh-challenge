@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import App from "./App"; 
 import Home from "./pages/home";
-//import PlayerStats from "./routes/PlayerStats";
+import PlayerStats from "./pages/reports/player_stat"; 
 
 const router = createBrowserRouter([
   {
@@ -14,6 +14,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/stats",
+        element: <PlayerStats />,
       },
     ],
   },
