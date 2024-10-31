@@ -4,6 +4,7 @@ import BasicButtons from '../../../components/Button';
 import { getPlayerStats } from '../../../constants/urls';
 import { formatDate } from '../../../utils/date';
 import axios from 'axios';
+import { CSVLink } from "react-csv";
 
 
 const PlayerStats = () => {
@@ -45,6 +46,13 @@ const PlayerStats = () => {
         { field: 'dateStat', headerName: 'Date', width: 150, flex: 1 },
     ];
 
+    const headers = [
+      { label: 'Nickname', key: 'nickname' },
+      { label: 'Score', key: 'score' },
+      { label: 'Date', key: 'dateStat' }
+    ];
+
+
   return (
     <div className='container mx-auto h-full items-center flex flex-col'>
       <h1 className='text-red-psh font-bold text-3xl mb-8 mt-2'>Players Statistics Report</h1>
@@ -54,13 +62,22 @@ const PlayerStats = () => {
         columns={columns}
         maxElements={10}
       />
-
-      <BasicButtons 
-        className='!my-8'
-        label='Export to CSV'
-        variant='contained'
-        size='large'
-      />
+      <div className="flex flex-row justify-center gap-4 mt-8">
+        <CSVLink 
+            data={rows} 
+            headers={headers} 
+            filename="player_stats.csv" 
+            separator=";"
+            style={{ textDecoration: 'none' }}
+        >
+            <BasicButtons 
+                className='!my-8'
+                label='Export to CSV'
+                variant='contained'
+                size='large'
+            />
+        </CSVLink>
+      </div>
     </div>
   );
 };
