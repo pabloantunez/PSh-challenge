@@ -23,45 +23,45 @@ export default function DataGridDemo({ rows, columns, maxElements }) {
         disableRowSelectionOnClick
         sx={{
           '& .MuiDataGrid-container--top [role=row], & .MuiDataGrid-container--bottom [role=row]': {
-            backgroundColor: 'transparent', // O el color que desees
+            backgroundColor: 'transparent',
           },
           '& .MuiDataGrid-cell': {
-            color: 'white', // Color del texto de las celdas
+            color: 'white',
           },
           '&.Mui-disabled': {
-            color: 'white', // Cambia el color a blanco cuando está deshabilitado
+            color: 'white',
           },
           '& .MuiDataGrid-columnHeader': {
-            color: 'white', // Color del texto de los encabezados
-            backgroundColor: 'transparent', // Fondo transparente para los encabezados
+            color: 'white',
+            backgroundColor: 'transparent',
             '&:hover': {
-              backgroundColor: 'transparent', // Fondo transparente al pasar el mouse
+              backgroundColor: 'transparent',
             },
           },
 
           '& .MuiDataGrid-root': {
-            backgroundColor: 'transparent', // Fondo transparente para el DataGrid
+            backgroundColor: 'transparent',
           },
           '& .MuiDataGrid-footerContainer': {
-            backgroundColor: 'purple-psh', // Fondo del pie de página del DataGrid
+            backgroundColor: 'purple-psh',
           },
           '& .MuiButtonBase-root': {
-            color: 'white', // Color del texto de los botones de paginación
+            color: 'white',
           },
           '& .MuiDataGrid-paginationButton': {
-            color: 'white', // Color del texto de los botones de paginación
+            color: 'white',
             '&:hover': {
-              backgroundColor: 'rgba(255, 255, 255, 0.1)', // Fondo al pasar el mouse (opcional)
+              backgroundColor: 'rgba(255, 255, 255, 0.1)',
             },
           },
           '& .MuiDataGrid-footer': {
-            color: 'white', // Color del texto de la paginación
+            color: 'white', 
           },
           '& .MuiDataGrid-pagination': {
-            color: 'white', // Color del texto de la paginación "1–10 of 84"
+            color: 'white', 
           },
           '& .MuiTablePagination-displayedRows': {
-            color: 'white', // Color del texto de la paginación "1–10 of 84"
+            color: 'white', 
           },
         }}
       />
