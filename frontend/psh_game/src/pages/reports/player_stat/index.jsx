@@ -55,7 +55,7 @@ const PlayerStats = () => {
 
   return (
     <div className='container mx-auto h-full items-center flex flex-col'>
-      <h1 className='text-red-psh font-bold text-3xl mb-8 mt-2'>Players Statistics Report</h1>
+      <h1 className='text-white font-bold text-3xl mb-8 mt-2'>Players Statistics Report</h1>
 
       <DataGridDemo 
         rows={rows}

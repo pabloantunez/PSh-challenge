@@ -8,7 +8,7 @@ const Home = () => {
 
   return (
     <div className='container mx-auto h-full items-center justify-center flex flex-col'>
-      <h1 className='text-red-psh font-bold text-3xl'>Welcome to the PSh Statistics Game</h1>
+      <h1 className='text-white font-bold text-3xl'>Welcome to the PSh Statistics Game</h1>
       <br></br>
       <br></br>
       {!hideButtons.includes(location.pathname) && (

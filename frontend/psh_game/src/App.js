@@ -7,7 +7,7 @@ import { FaLinkedin } from 'react-icons/fa';
 
 function App() {
   return (
-    <div className="App min-h-[100svh] flex flex-col justify-between">
+    <div className="App min-h-[100svh] flex flex-col justify-between bg-gradient-to-r from-red-psh to-purple-psh">
       <Header name="Pablo Germán Antúnez" challengeName="PSh-Challenge" />
       <main className="container mx-auto h-full flex-grow flex items-center">
         <Outlet />
