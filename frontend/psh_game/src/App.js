@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import { Outlet } from 'react-router-dom';
 import './App.css';
+import { FaLinkedin } from 'react-icons/fa';
 
 function App() {
   return (
@@ -11,7 +12,11 @@ function App() {
       <main className="container mx-auto h-full flex-grow flex items-center">
         <Outlet />
       </main>
-      <Footer linkedinUrl="https://www.linkedin.com/in/pabloantunez/" title="University Technician in Web Development"/>
+      <Footer 
+        linkedinUrl="https://www.linkedin.com/in/pabloantunez/" 
+        title="University Technician in Web Development"
+        icon={<FaLinkedin size={24} />} 
+      />
     </div>
   );
 }
