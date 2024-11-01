@@ -5,7 +5,7 @@ import { getPlayerStats } from '../../../constants/urls';
 import { formatDate } from '../../../utils/date';
 import axios from 'axios';
 import { CSVLink } from "react-csv";
-
+import { columns, headers } from '../../../constants/grid';
 
 const PlayerStats = () => {
     const [rows, setRows] = useState([]);
@@ -38,30 +38,20 @@ const PlayerStats = () => {
 
         return () => clearInterval(interval);
       }, []);
-    
-    const columns = [
-        { field: 'profileImage', headerName: 'Avatar', width: 90, flex: 1, renderCell: (params) => <img src={params.value} /> },
-        { field: 'nickname', headerName: 'Nickname', width: 150, flex: 1 },
-        { field: 'score', headerName: 'Score', width: 150, flex: 1 },
-        { field: 'dateStat', headerName: 'Date', width: 150, flex: 1 },
-    ];
-
-    const headers = [
-      { label: 'Nickname', key: 'nickname' },
-      { label: 'Score', key: 'score' },
-      { label: 'Date', key: 'dateStat' }
-    ];
-
 
   return (
     <div className='container mx-auto h-full items-center flex flex-col'>
       <h1 className='text-white font-bold text-3xl mb-8 mt-2'>Players Statistics Report</h1>
+      {loading && <div class="flex items-center justify-center h-screen">
+      <div class="w-16 h-16 border-8 border-t-8 border-gray-200 rounded-full animate-spin border-t-gray-900"></div>
+      </div>}
 
       <DataGridDemo 
         rows={rows}
         columns={columns}
         maxElements={10}
       />
+      {error && <span>{error}</span>}
       <div className="flex flex-row justify-center gap-4 mt-8">
         <CSVLink 
             data={rows} 
