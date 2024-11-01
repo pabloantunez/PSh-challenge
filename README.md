@@ -34,16 +34,19 @@ The backend periodically simulates player game statistics by inserting random da
 1. Clone the repository.
 2. For the backend, create and activate a virtual environment (optional but recommended), then install the required dependencies:<br>
    ↳ `pip install -r requirements.txt`
-3. Ensure that MySQL is installed and configured for the backend. You may need to create a database and update the Django settings with your database credentials.
-4. For the frontend, navigate to the frontend directory and install the required dependencies:<br>
+3. To create the database, use the script provided as **script_database**. Ensure that MySQL is installed and configured for the backend.
+4. To create tables on database, navigate to the **backend/game** directory and execute:<br>
+   ↳ a. `python manage.py makemigrations`<br>
+   ↳ b. `python manage.py migrate`
+6. For the frontend, navigate to the **frontend/psh_game** directory and install the required dependencies:<br>
    ↳ `npm install`
-5. To run the backend server, execute:<br>
+7. To run the backend server, navigate to the **backend/game** directory and execute:<br>
    ↳ `python manage.py runserver`
-6. To start the Celery worker, execute:<br>
+8. To start the Celery worker, execute:<br>
    ↳ `celery -A game worker --loglevel=info -P solo`
-7. To start the Celery beat scheduler, execute:<br>
+9. To start the Celery beat scheduler, execute:<br>
    ↳ `celery -A game beat --loglevel=info`
-8. To start the frontend development server, execute:<br>
+10. To start the frontend development server, execute:<br>
    ↳ `npm start`
 
 ### Data Generation
